@@ -9,14 +9,14 @@ const app = express();
 const server = http.createServer(app);  // Create HTTP server
 const io = socketIo(server, {          // Attach Socket.IO to the server with CORS support
   cors: {
-    origin: "https://chatapp-nine-vert.vercel.app", // ✅ Frontend URL  
+    origin: "https://chatsite-two.vercel.app", // ✅ Frontend URL  
     methods: ["GET", "POST"]
   }
 });
 
 // Middleware
 app.use(cors({
-  origin: "https://chatapp-nine-vert.vercel.app",  // Allow the Vercel frontend domain
+  origin: "https://chatsite-two.vercel.app",  // Allow the Vercel frontend domain
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
