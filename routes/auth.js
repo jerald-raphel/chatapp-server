@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs'); // ✅ correct
 const jwt = require('jsonwebtoken');
 
 // Middleware to verify JWT token
