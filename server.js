@@ -9,14 +9,14 @@ const app = express();
 const server = http.createServer(app);  // Create HTTP server
 const io = socketIo(server, {          // Attach Socket.IO to the server with CORS support
   cors: {
-    origin: "https://chatsite-two.vercel.app", // ✅ Frontend URL  
+    origin: "https://chatapp-swart-iota.vercel.app", // ✅ Frontend URL  
     methods: ["GET", "POST"]
   }
 });
 
 // Middleware
 app.use(cors({
-  origin: "https://chatsite-two.vercel.app",  // Allow the Vercel frontend domain
+  origin: "https://chatapp-swart-iota.vercel.app",  // Allow the Vercel frontend domain
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
@@ -56,4 +56,6 @@ mongoose.connect(process.env.MONGO_URI)
   })
   .catch(err => console.error('MongoDB connection error:', err));
   
+
+
 
