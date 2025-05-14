@@ -7,19 +7,21 @@ require('dotenv').config();
 
 const app = express();
 const server = http.createServer(app);  // Create HTTP server
-const io = socketIo(server, {          // Attach Socket.IO to the server with CORS support
+  const io = socketIo(server, {
   cors: {
-    origin: "https://chatapp-swart-iota.vercel.app", // ✅ Frontend URL  
+    origin: "https://chatapp-swart-iota.vercel.app", // Frontend URL
     methods: ["GET", "POST"]
   }
 });
 
-// Middleware
+// Express CORS middleware
 app.use(cors({
   origin: "https://chatapp-swart-iota.vercel.app",  // Allow the Vercel frontend domain
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
+
+// Express middleware and routes
 app.use(express.json());
 
 // Routes
